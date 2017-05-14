@@ -10,7 +10,8 @@ random.seed(42)
 COLOR_RED = "R"
 COLOR_BLACK = "B"
 # twice as likely to generate a black card.
-COLORS = [COLOR_RED, COLOR_BLACK, COLOR_BLACK]
+COLORS = [COLOR_RED, COLOR_BLACK]
+COLOR_CHOOSE = [COLOR_RED, COLOR_BLACK, COLOR_BLACK]
 
 ACTION_HIT = "H"
 ACTION_STICK = "S"
@@ -107,5 +108,5 @@ class Environment(object):
 
   @staticmethod
   def _generate_random_card(force_black=False):
-    return Card(COLOR_BLACK if force_black else random.choice(COLORS),
+    return Card(COLOR_BLACK if force_black else random.choice(COLOR_CHOOSE),
                 random.randint(1,10))
